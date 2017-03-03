@@ -18,11 +18,16 @@
 <resources>
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <item name="android:background">#7986CB</item>
     </style>
 
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="Theme.Bacon.Detail" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">#3F51B5</item>
+        <item name="android:textColorLink">#DD2C00</item>
+    </style>
+
+    <style name="FloatingActionButtonStyle" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:backgroundTint">#DD2C00</item>
     </style>
 
 </resources>
