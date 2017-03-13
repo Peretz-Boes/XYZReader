@@ -29,4 +29,10 @@
         <item name="android:textColorLink">#DD2C00</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#7986CB</item>
+        <item name="colorPrimaryDark">#3F51B5</item>
+        <item name="colorAccent">#DD2C00</item>
+    </style>
+
 </resources>
