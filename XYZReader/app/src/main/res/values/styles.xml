@@ -17,18 +17,6 @@
 
 <resources>
 
-<style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-    <item name="android:background">#7986CB</item>
-</style>
-
-<style name="Theme.Bacon.Detail" parent="@style/Theme.AppCompat.Light.NoActionBar">
-    <item name="android:background">#3F51B5</item>
-</style>
-
-    <style name="TextColourLinkStyle" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textColorLink">#DD2C00</item>
-    </style>
-
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#7986CB</item>
         <item name="colorPrimaryDark">#3F51B5</item>

@@ -38,6 +38,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
     private static final String LOG_TAG=ArticleListActivity.class.getSimpleName();
+    public static final String TRANSITION_TAG="TRANSITION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
