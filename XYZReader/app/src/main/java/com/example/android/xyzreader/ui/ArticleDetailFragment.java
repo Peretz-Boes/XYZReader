@@ -141,6 +141,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         appBarLayout=(AppBarLayout)mRootView.findViewById(R.id.toolbar_layout);
         collapsingToolbarLayout=(CollapsingToolbarLayout)mRootView.findViewById(R.id.collapsing_toolbar_layout);
+        detailToolbar=(Toolbar)mRootView.findViewById(R.id.detail_fragment_toolbar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShown=false;
             int scrollRange=-1;
@@ -163,7 +164,7 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-//        detailToolbar=(Toolbar)mRootView.findViewById(R.id.detail_fragment_toolbar);
+
 //        //detailToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
 //        detailToolbar.setNavigationOnClickListener(new View.OnClickListener() {
 //            @Override
