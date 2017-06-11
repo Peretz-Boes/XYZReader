@@ -43,27 +43,26 @@ public class ArticleDetailFragment extends Fragment implements
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
-    private static final float PARALLAX_FACTOR = 1.25f;
 
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
     private int mMutedColor = 0xFF333333;
-    private NestedScrollView mScrollView;
+    public NestedScrollView mScrollView;
     private AppBarLayout appBarLayout;
-    private CoordinatorLayout coordinatorLayout;
+    public CoordinatorLayout coordinatorLayout;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private Toolbar detailToolbar;
     private ColorDrawable mStatusBarColorDrawable;
 
-    private int mTopInset;
-    private View mPhotoContainerView;
+    public int mTopInset;
+    public View mPhotoContainerView;
     private ImageView mPhotoView;
-    private int mScrollY;
+    public int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
-    private String collapsingToolbarLayoutTitle;
-    private String mTitle;
+    public String collapsingToolbarLayoutTitle;
+    public String mTitle;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -164,15 +163,6 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-
-//        //detailToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-//        detailToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getActivity().onBackPressed();
-//            }
-//        });
-
         bindViews();
         return mRootView;
     }
@@ -214,7 +204,6 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
-        //bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
 
         if (mCursor != null) {
             mRootView.setAlpha(0);

@@ -9,5 +9,6 @@
 
     <string name="up">Up</string>
     <string name="transition_name">transition</string>
+    <string name="internet_connection_error_message">There is no Internet service. The data is not refreshing.</string>
 
 </resources>

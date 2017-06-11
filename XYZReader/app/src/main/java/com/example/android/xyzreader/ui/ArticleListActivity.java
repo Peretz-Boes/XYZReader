@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -34,11 +38,10 @@ import com.example.android.xyzreader.data.UpdaterService;
 public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    private Toolbar mToolbar;
+    public Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
     private static final String LOG_TAG=ArticleListActivity.class.getSimpleName();
-    public static final String TRANSITION_TAG="TRANSITION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +49,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_article_list);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
@@ -58,6 +58,12 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+
+        if (!isInternetServiceAvailable()){
+            CoordinatorLayout coordinatorLayout=(CoordinatorLayout)findViewById(R.id.main_activity_root_layout);
+            Snackbar.make(coordinatorLayout,R.string.internet_connection_error_message,Snackbar.LENGTH_LONG);
+        }
+
     }
 
     private void refresh() {
@@ -178,5 +184,13 @@ public class ArticleListActivity extends AppCompatActivity implements
             titleView = (TextView) view.findViewById(R.id.article_title);
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
         }
+
     }
+
+    public boolean isInternetServiceAvailable(){
+        ConnectivityManager connectivityManager=(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
+        return networkInfo.isConnected()||networkInfo.isConnectedOrConnecting();
+    }
+
 }
